@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/editOrderMenuitem"
+        android:enabled="true"
+        android:title="редактировать"
+        android:visible="true">
+    </item>
+    <item
+        android:id="@+id/deleteOrderMenuitem"
+        android:enabled="true"
+        android:title="удалить"
+        android:visible="true">
+    </item>
+
+</menu>

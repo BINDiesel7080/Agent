@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/total_debt_client"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Точка" />
+
+    <TextView
+        android:id="@+id/total_debt_lated"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="Пд" />
+
+    <TextView
+        android:id="@+id/total_debt"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="Од" />
+
+</LinearLayout>

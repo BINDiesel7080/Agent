@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dk.agent"
+    android:installLocation="preferExternal"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="14"/>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="ClientActivity" >
+        </activity>
+        <activity android:name="ClientNewOrderActivity" >
+        </activity>
+        <activity android:name="ClientOrdersActivity" >
+        </activity>
+        <activity android:name="ClientOldOrders" >
+        </activity>
+        <activity android:name="DebtsList" >
+        </activity>
+        <activity android:name="TotalDebtsList" >
+        </activity>
+        <activity
+            android:name="com.dk.agent.loadUpdate">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:mimeType="*/*" />
+                <data android:pathPattern="\\*\\.sqlite" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

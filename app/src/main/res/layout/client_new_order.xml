@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Spinner
+            android:id="@+id/GroupSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Spinner
+            android:id="@+id/SubgroupSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/Subgroup2Spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ListView
+        android:id="@+id/android:list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.41" >
+    </ListView>
+
+    <RadioGroup
+        android:id="@+id/radioGroupNew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radioOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:checked="true"
+            android:text="товары для заказа"
+            android:textSize="15dp" />
+
+        <RadioButton
+            android:id="@+id/radioReturn"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="все товары"
+            android:textSize="15dp" />
+    </RadioGroup>
+
+</LinearLayout>

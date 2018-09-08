@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/tvDocDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="дата"
+        android:textSize="12dp" />
+
+    <TextView
+        android:id="@+id/tvDocNumber"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:text="№док"
+        android:textSize="12dp" />
+
+    <TextView
+        android:id="@+id/tvDocTotal"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="сумма"
+        android:textSize="12dp" />
+
+    <TextView
+        android:id="@+id/tvDebt"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="долг"
+        android:textSize="12dp" />
+
+    <TextView
+        android:id="@+id/tvLate"
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:text="пр"
+        android:textSize="12dp" />
+
+</LinearLayout>

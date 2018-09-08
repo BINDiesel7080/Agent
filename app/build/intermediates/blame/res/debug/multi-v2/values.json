@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "F:\\Docs\\src\\StudioProjects\\Agent\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "F:\\Docs\\src\\StudioProjects\\Agent\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "9,4,5,3,8,6,7,11,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "369,103,147,59,314,191,251,537,491",
+                        "endColumns": "120,42,42,42,53,58,61,72,44",
+                        "endOffsets": "485,141,185,97,363,245,308,605,531"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,176,219,262,305,359,418,480,553",
+                        "endColumns": "120,42,42,42,53,58,61,72,44",
+                        "endOffsets": "171,214,257,300,354,413,475,548,593"
+                    }
+                }
+            ]
+        }
+    ]
+}

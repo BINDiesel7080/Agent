@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/deleteOrdersMenuitem"
+        android:enabled="true"
+        android:title="удалить весь заказ этого клиента"
+        android:visible="true">
+    </item>
+    <item
+        android:id="@+id/deleteReturnsMenuitem"
+        android:enabled="true"
+        android:title="удалить весь возврат этого клиента"
+        android:visible="true">
+    </item>
+
+</menu>

@@ -1,0 +1,113 @@
+-- Merging decision tree log ---
+manifest
+ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:2:1-50:12
+INJECTED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:2:1-50:12
+	package
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:3:5-27
+		INJECTED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml
+		INJECTED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:6:5-30
+		INJECTED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml
+		INJECTED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:5:5-28
+		INJECTED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml
+		INJECTED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml
+	android:installLocation
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:4:5-45
+uses-sdk
+ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:8:5-72
+INJECTED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:8:5-72
+INJECTED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:8:5-72
+INJECTED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:8:5-72
+INJECTED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:8:5-72
+	android:targetSdkVersion
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:8:41-70
+		INJECTED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml
+		INJECTED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:8:15-40
+		INJECTED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml
+		INJECTED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:10:5-81
+	android:name
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:10:22-78
+application
+ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:12:5-48:19
+	android:label
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:14:9-41
+	android:icon
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:13:9-45
+activity#com.dk.agent.MainActivity
+ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:15:9-23:20
+	android:label
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:17:13-45
+	android:name
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:16:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:18:13-22:29
+action#android.intent.action.MAIN
+ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:19:17-69
+	android:name
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:19:25-66
+category#android.intent.category.LAUNCHER
+ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:21:17-77
+	android:name
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:21:27-74
+activity#com.dk.agent.ClientActivity
+ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:24:9-25:20
+	android:name
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:24:19-48
+activity#com.dk.agent.ClientNewOrderActivity
+ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:26:9-27:20
+	android:name
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:26:19-56
+activity#com.dk.agent.ClientOrdersActivity
+ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:28:9-29:20
+	android:name
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:28:19-54
+activity#com.dk.agent.ClientOldOrders
+ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:30:9-31:20
+	android:name
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:30:19-49
+activity#com.dk.agent.DebtsList
+ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:32:9-33:20
+	android:name
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:32:19-43
+activity#com.dk.agent.TotalDebtsList
+ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:34:9-35:20
+	android:name
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:34:19-48
+activity#com.dk.agent.loadUpdate
+ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:36:9-47:20
+	android:name
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:37:13-51
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:mimeType:*/*+data:pathPattern:\\*\\.sqlite
+ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:38:13-46:29
+action#android.intent.action.VIEW
+ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:39:17-69
+	android:name
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:39:25-66
+category#android.intent.category.DEFAULT
+ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:41:17-76
+	android:name
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:41:27-73
+category#android.intent.category.BROWSABLE
+ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:42:17-78
+	android:name
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:42:27-75
+data
+ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:44:17-48
+	android:pathPattern
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:45:23-57
+	android:mimeType
+		ADDED from F:\Docs\src\StudioProjects\Agent\app\src\main\AndroidManifest.xml:44:23-45

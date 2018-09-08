@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/updateExplain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/del_orders"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Удалить заказы" />
+
+        <Button
+            android:id="@+id/dndel_orders"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="НЕ удалять заказы" />
+    </LinearLayout>
+
+</LinearLayout>

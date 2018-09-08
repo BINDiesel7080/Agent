@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/changeFromOrg"
+        android:title="сменить нашу организацию"
+        android:orderInCategory="1" android:visible="true" android:enabled="true">
+    </item>
+    <item android:id="@+id/orders" android:title="заявки..." android:orderInCategory="2" android:visible="true" android:enabled="true">
+        <menu>
+            <item android:id="@+id/deleteAllMenuitem" android:title="удалить все заказы и возвраты всех клиентов"/>
+            <item android:id="@+id/prepareOrders" android:title="отправить через USB"/>
+            <item android:id="@+id/sendOrders" android:title="отправить почтой"/>
+        </menu>
+    </item>
+    <item android:id="@+id/reports" android:title="отчеты" android:orderInCategory="3">
+        <menu>
+            <item android:id="@+id/stat" android:title="статистика заказа"/>
+            <item android:id="@+id/total_debts_menuitem" android:title="общий ДТ"/>
+        </menu>
+    </item>
+
+</menu>
