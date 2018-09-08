@@ -21,10 +21,12 @@ public class ClientActivity extends TabActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.client);
+
 		Bundle extras = getIntent().getExtras();
 		ClientID = extras.getString("com.dk.agent.client_id");
 		ClientName = extras.getString("com.dk.agent.client_name");
 		fromOrgID = extras.getLong("com.dk.agent.from_org_id");
+
 		fromOrgName = extras.getString("com.dk.agent.from_org_name");
 		this.setTitle(fromOrgName);
 		dbi = new dbAdapter(this);
