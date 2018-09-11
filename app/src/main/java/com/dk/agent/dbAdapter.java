@@ -21,17 +21,17 @@ public class dbAdapter {
 	public static String dbToSendName;
 	private Context ctx;
 	public SQLiteDatabase db;
-	public static final long MadyaroffOrgID = 1;// бали/сфера/тдс
-	public static final long STOrgID = 99112;// сибирская трапеза
-	public static final long RadugaOrgID = 2;// радуга/акб
-	public static final long IrbisOrgID = 98076;// МИТ-Инвест
+	public static final long MadyaroffOrgID = 1;// Р±Р°Р»Рё/СЃС„РµСЂР°/С‚РґСЃ
+	public static final long STOrgID = 99112;// СЃРёР±РёСЂСЃРєР°СЏ С‚СЂР°РїРµР·Р°
+	public static final long RadugaOrgID = 2;// СЂР°РґСѓРіР°/Р°РєР±
+	public static final long IrbisOrgID = 98076;// РњРРў-РРЅРІРµСЃС‚
 
 	dbAdapter(Context ctx) {
 		this.ctx = ctx;
 		open();
 	}
 
-	void open() {// проверим существование БД
+	void open() {// РїСЂРѕРІРµСЂРёРј СЃСѓС‰РµСЃС‚РІРѕРІР°РЅРёРµ Р‘Р”
 		File f = Environment.getExternalStorageDirectory();
 		FullDbPath = f.getPath() + ctx.getString(R.string.dbPath);
 		FullDbPathWithName = FullDbPath + ctx.getString(R.string.dbName);
@@ -59,7 +59,7 @@ public class dbAdapter {
 			// ShowToast.show(ctx, "wsw");
 			// db.setLockingEnabled(false);
 		} else {
-			// ShowToast.show(ctx, "БД не обнаружена!");
+			// ShowToast.show(ctx, "Р‘Р” РЅРµ РѕР±РЅР°СЂСѓР¶РµРЅР°!");
 			// android.os.Process.killProcess(android.os.Process.myPid());
 		}
 	}
@@ -70,9 +70,9 @@ public class dbAdapter {
 		db.close();
 	}
 
-	void CompactAndClose() {// ВСТАВИТЬ ПРОГРЕССДИАЛОГ!
-		// ShowToast.show(ctx, db.inTransaction() ? "есть транзакции"
-		// : "нет транзакций");
+	void CompactAndClose() {// Р’РЎРўРђР’РРўР¬ РџР РћР“Р Р•РЎРЎР”РРђР›РћР“!
+		// ShowToast.show(ctx, db.inTransaction() ? "РµСЃС‚СЊ С‚СЂР°РЅР·Р°РєС†РёРё"
+		// : "РЅРµС‚ С‚СЂР°РЅР·Р°РєС†РёР№");
 		open();
 		db.execSQL("VACUUM");
 		close();
@@ -129,7 +129,7 @@ public class dbAdapter {
 			tdb.setTransactionSuccessful();
 		} catch (Exception e) {
 			res = false;
-			ShowToast.show(ctx, "ошибка обновления бд!");
+			ShowToast.show(ctx, "РѕС€РёР±РєР° РѕР±РЅРѕРІР»РµРЅРёСЏ Р±Рґ!");
 		} finally {
 			tdb.endTransaction();
 			tdb.execSQL("VACUUM");
@@ -222,7 +222,7 @@ public class dbAdapter {
 			tdb.setTransactionSuccessful();
 		} catch (Exception e) {
 			res = false;
-			ShowToast.show(ctx, "ошибка формирования бд!");
+			ShowToast.show(ctx, "РѕС€РёР±РєР° С„РѕСЂРјРёСЂРѕРІР°РЅРёСЏ Р±Рґ!");
 		} finally {
 			tdb.endTransaction();
 			tdb.execSQL("VACUUM");
@@ -277,15 +277,15 @@ public class dbAdapter {
 	int deleteDocRow(long DocRowID, boolean deleteEmptyDoc) {
 		int res = 0;
 		long DocID;
-		// получим строку заказа по ее айди
+		// РїРѕР»СѓС‡РёРј СЃС‚СЂРѕРєСѓ Р·Р°РєР°Р·Р° РїРѕ РµРµ Р°Р№РґРё
 		Cursor c = GetDocRowsByDocRowID(DocRowID);
 		if (c.getCount() > 0) {
-			// это айди документа содержащего строку
+			// СЌС‚Рѕ Р°Р№РґРё РґРѕРєСѓРјРµРЅС‚Р° СЃРѕРґРµСЂР¶Р°С‰РµРіРѕ СЃС‚СЂРѕРєСѓ
 			DocID = GetLong(c, "Doc");
-			// получим все строки этого документа
+			// РїРѕР»СѓС‡РёРј РІСЃРµ СЃС‚СЂРѕРєРё СЌС‚РѕРіРѕ РґРѕРєСѓРјРµРЅС‚Р°
 			c = GetDocRowsByDocID(DocID);
-			// если строк не равно 1, удалять документ нельзя, иначе - в
-			// зависимости от входного deleteEmptyDoc
+			// РµСЃР»Рё СЃС‚СЂРѕРє РЅРµ СЂР°РІРЅРѕ 1, СѓРґР°Р»СЏС‚СЊ РґРѕРєСѓРјРµРЅС‚ РЅРµР»СЊР·СЏ, РёРЅР°С‡Рµ - РІ
+			// Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ РІС…РѕРґРЅРѕРіРѕ deleteEmptyDoc
 			if (c.getCount() != 1) {
 				deleteEmptyDoc = false;
 			}
@@ -300,7 +300,7 @@ public class dbAdapter {
 	int deleteDocs() {
 		int res = 0;
 		db.beginTransaction();
-		try {// удалим документы, их строки должны подчиститься триггером бд
+		try {// СѓРґР°Р»РёРј РґРѕРєСѓРјРµРЅС‚С‹, РёС… СЃС‚СЂРѕРєРё РґРѕР»Р¶РЅС‹ РїРѕРґС‡РёСЃС‚РёС‚СЊСЃСЏ С‚СЂРёРіРіРµСЂРѕРј Р±Рґ
 			res = db.delete("Docs", "", null);
 			db.setTransactionSuccessful();
 		} catch (Exception e) {
@@ -314,7 +314,7 @@ public class dbAdapter {
 	int deleteDocs(String ClientID, int isReturn) {
 		int res = 0;
 		db.beginTransaction();
-		try {// удалим документы, их строки должны подчиститься триггером бд
+		try {// СѓРґР°Р»РёРј РґРѕРєСѓРјРµРЅС‚С‹, РёС… СЃС‚СЂРѕРєРё РґРѕР»Р¶РЅС‹ РїРѕРґС‡РёСЃС‚РёС‚СЊСЃСЏ С‚СЂРёРіРіРµСЂРѕРј Р±Рґ
 			res = db.delete("Docs", "Client='" + ClientID + "' and isReturn="
 					+ isReturn, null);
 			db.setTransactionSuccessful();
@@ -365,7 +365,7 @@ public class dbAdapter {
 				+ " and Goods='" + GoodsID + "'", null);
 	}
 
-	// используется для читабельного списка заказов клиента
+	// РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ С‡РёС‚Р°Р±РµР»СЊРЅРѕРіРѕ СЃРїРёСЃРєР° Р·Р°РєР°Р·РѕРІ РєР»РёРµРЅС‚Р°
 	public Cursor GetOldOrders(String clientID, long fromOrgID, int docType) {
 		return db
 				.rawQuery(
@@ -428,7 +428,7 @@ public class dbAdapter {
 	}
 
 	public float GetDebtsTotals(int mode, long fromOrgID) {
-		// mode 0 - общий долг, 1 - просроченный
+		// mode 0 - РѕР±С‰РёР№ РґРѕР»Рі, 1 - РїСЂРѕСЃСЂРѕС‡РµРЅРЅС‹Р№
 		Cursor c;
 		c = db.rawQuery(
 				"Select sum(case when julianday('now')-julianday(date(DocDate))-late>=0 then Debt else 0 end) LatedDebt, sum(Debt) TotalDebt from Debts d where FromOrg="
@@ -551,7 +551,7 @@ public class dbAdapter {
 		return c.getLong(i);
 	}
 
-	// используется для читабельного списка заказов клиента
+	// РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РґР»СЏ С‡РёС‚Р°Р±РµР»СЊРЅРѕРіРѕ СЃРїРёСЃРєР° Р·Р°РєР°Р·РѕРІ РєР»РёРµРЅС‚Р°
 	public Cursor GetOrders(long fromOrgID, String ClientID, int isReturn,
 			int docNumber) {
 		return db
@@ -694,21 +694,21 @@ public class dbAdapter {
 		}
 		if (DocID > 0) {
 			if (((Cursor) GetDocRows(DocID, GoodsID)).getCount() == 0) {
-				// вытащим цену из таблицы товара и передадим в инсерт
+				// РІС‹С‚Р°С‰РёРј С†РµРЅСѓ РёР· С‚Р°Р±Р»РёС†С‹ С‚РѕРІР°СЂР° Рё РїРµСЂРµРґР°РґРёРј РІ РёРЅСЃРµСЂС‚
 				if (insertDocRow(DocID, GoodsID, q,
 						GetFloat(GetGoods(GoodsID), "Price"), places) == -1) {
 					ShowToast
 							.show(ctx,
-									"Что-то пошло не так! У Вас точно последняя версия программы?");
+									"Р§С‚Рѕ-С‚Рѕ РїРѕС€Р»Рѕ РЅРµ С‚Р°Рє! РЈ Р’Р°СЃ С‚РѕС‡РЅРѕ РїРѕСЃР»РµРґРЅСЏСЏ РІРµСЂСЃРёСЏ РїСЂРѕРіСЂР°РјРјС‹?");
 				}
 				;
 			} else
 				ShowToast
 						.show(ctx,
-								"Этот товар уже заказан! Перейдите на вкладку заказанного товара и отредактируйте количество.");
+								"Р­С‚РѕС‚ С‚РѕРІР°СЂ СѓР¶Рµ Р·Р°РєР°Р·Р°РЅ! РџРµСЂРµР№РґРёС‚Рµ РЅР° РІРєР»Р°РґРєСѓ Р·Р°РєР°Р·Р°РЅРЅРѕРіРѕ С‚РѕРІР°СЂР° Рё РѕС‚СЂРµРґР°РєС‚РёСЂСѓР№С‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ.");
 
 		} else {
-			ShowToast.show(ctx, "Ошибка создания документа!");
+			ShowToast.show(ctx, "РћС€РёР±РєР° СЃРѕР·РґР°РЅРёСЏ РґРѕРєСѓРјРµРЅС‚Р°!");
 		}
 	}
 

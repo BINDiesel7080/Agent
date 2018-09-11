@@ -40,8 +40,8 @@ public class ClientOrdersActivity extends ListActivity {
 	long DocRowID;
 	float Weight;
 	float ArticleWeight;
-	int PiB; // штук в упаковке
-	int cantDivide; // не продается поштучно
+	int PiB; // С€С‚СѓРє РІ СѓРїР°РєРѕРІРєРµ
+	int cantDivide; // РЅРµ РїСЂРѕРґР°РµС‚СЃСЏ РїРѕС€С‚СѓС‡РЅРѕ
 	float quantum;
 	TextView dialogGoodsName;
 	EditText dialogUnits;
@@ -165,9 +165,9 @@ public class ClientOrdersActivity extends ListActivity {
 						R.id.tvQuantity2, R.id.tvPrice2 }));
 		orderTypeForNote = isReturn;
 		weightTotal.setText(String.valueOf(dbi.getWeightTotal(
-				ClientActivity.ClientID, isReturn)) + "кг");
+				ClientActivity.ClientID, isReturn)) + "РєРі");
 		totalTotal.setText(String.valueOf(dbi.getTotalTotal(
-				ClientActivity.ClientID, isReturn)) + "р");
+				ClientActivity.ClientID, isReturn)) + "СЂ");
 	}
 
 	/*
@@ -233,7 +233,7 @@ public class ClientOrdersActivity extends ListActivity {
 	 */
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
-		// запомним позицию списка для диалога
+		// Р·Р°РїРѕРјРЅРёРј РїРѕР·РёС†РёСЋ СЃРїРёСЃРєР° РґР»СЏ РґРёР°Р»РѕРіР°
 		updateOrder(id, position);
 		super.onListItemClick(l, v, position, id);
 	}
@@ -282,15 +282,15 @@ public class ClientOrdersActivity extends ListActivity {
 
 	@Override
 	protected Dialog onCreateDialog(int id) {
-		// создадим диалог
+		// СЃРѕР·РґР°РґРёРј РґРёР°Р»РѕРі
 		Dialog dialog;
 		AlertDialog.Builder builder;
 		AlertDialog alert;
 		switch (id) {
 		case CONTEXT_ORDER_DELETE_DIALOG:
 			builder = new AlertDialog.Builder(this);
-			builder.setMessage("Удалить строку заказа?").setPositiveButton(
-					"Да", new DialogInterface.OnClickListener() {
+			builder.setMessage("РЈРґР°Р»РёС‚СЊ СЃС‚СЂРѕРєСѓ Р·Р°РєР°Р·Р°?").setPositiveButton(
+					"Р”Р°", new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dialog, int id) {
 							dbi.deleteDocRow(DocRowID, true);
 							GoodsRefresh(orderTypeRadiogroup
@@ -303,8 +303,8 @@ public class ClientOrdersActivity extends ListActivity {
 
 		case ORDER_DELETE_DIALOG:
 			builder = new AlertDialog.Builder(this);
-			builder.setMessage("Удалить все заказы клиента?")
-					.setPositiveButton("Да",
+			builder.setMessage("РЈРґР°Р»РёС‚СЊ РІСЃРµ Р·Р°РєР°Р·С‹ РєР»РёРµРЅС‚Р°?")
+					.setPositiveButton("Р”Р°",
 							new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog,
 										int id) {
@@ -319,8 +319,8 @@ public class ClientOrdersActivity extends ListActivity {
 
 		case RETURN_DELETE_DIALOG:
 			builder = new AlertDialog.Builder(this);
-			builder.setMessage("Удалить все возвраты клиента?")
-					.setPositiveButton("Да",
+			builder.setMessage("РЈРґР°Р»РёС‚СЊ РІСЃРµ РІРѕР·РІСЂР°С‚С‹ РєР»РёРµРЅС‚Р°?")
+					.setPositiveButton("Р”Р°",
 							new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog,
 										int id) {
@@ -336,7 +336,7 @@ public class ClientOrdersActivity extends ListActivity {
 		case ClientNewOrderActivity.ORDER_DIALOG:
 			dialog = new Dialog(this);
 			dialog.setContentView(R.layout.order_dialog);
-			dialog.setTitle("Количество");
+			dialog.setTitle("РљРѕР»РёС‡РµСЃС‚РІРѕ");
 			dialogGoodsName = (TextView) dialog.findViewById(R.id.GoodsName);
 			dialogUnits = (EditText) dialog.findViewById(R.id.units);
 			dialogArticles = (EditText) dialog.findViewById(R.id.articles);
@@ -479,7 +479,7 @@ public class ClientOrdersActivity extends ListActivity {
 							: 1);
 				} else
 					ShowToast
-							.show(ctx, "Количество должно быть положительным!");
+							.show(ctx, "РљРѕР»РёС‡РµСЃС‚РІРѕ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рј!");
 			} catch (Exception e) {
 				ShowToast.show(ctx, e.toString());
 			}
@@ -497,12 +497,12 @@ public class ClientOrdersActivity extends ListActivity {
 					.getItemAtPosition(pos), "GoodsID"));
 			PiB = dbi.GetInt(CurrentGoods, "PiecesInBox");
 			cantDivide = dbi.GetInt(CurrentGoods, "cantDivide");
-			quantum = cantDivide == 0 ? 1 : PiB;// минимальное приращение
+			quantum = cantDivide == 0 ? 1 : PiB;// РјРёРЅРёРјР°Р»СЊРЅРѕРµ РїСЂРёСЂР°С‰РµРЅРёРµ
 			Weight = dbi.GetFloat(CurrentGoods, "Weight");
 			ArticleWeight = dbi.GetFloat(CurrentGoods, "ArticleWeight");
-			DocRowID = getListView().getItemIdAtPosition(pos);// убедиться что
-																// дает норм
-																// айди
+			DocRowID = getListView().getItemIdAtPosition(pos);// СѓР±РµРґРёС‚СЊСЃСЏ С‡С‚Рѕ
+																// РґР°РµС‚ РЅРѕСЂРј
+																// Р°Р№РґРё
 			dialogGoodsName.setText(dbi.GetString(CurrentGoods, "Name"));
 			Quantity = dbi.GetFloat(
 					(Cursor) getListView().getItemAtPosition(pos), "Quantity");

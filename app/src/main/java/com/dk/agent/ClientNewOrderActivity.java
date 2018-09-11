@@ -62,20 +62,20 @@ public class ClientNewOrderActivity extends ListActivity {
 	float Weight;
 	float ArticleWeight;
 	private int isCurrentActionReturn = 0;
-	int PiB; // штук в упаковке
-	int cantDivide; // не продается поштучно
+	int PiB; // С€С‚СѓРє РІ СѓРїР°РєРѕРІРєРµ
+	int cantDivide; // РЅРµ РїСЂРѕРґР°РµС‚СЃСЏ РїРѕС€С‚СѓС‡РЅРѕ
 	float quantum;
-	// идентификаторы строк меню для заказов в несколько доков
+	// РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂС‹ СЃС‚СЂРѕРє РјРµРЅСЋ РґР»СЏ Р·Р°РєР°Р·РѕРІ РІ РЅРµСЃРєРѕР»СЊРєРѕ РґРѕРєРѕРІ
 	public static int addOrderToDoc[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
 			12, 13, 14, 15, 16, 17, 18, 19, 20 };
 	public static int addReturnToDoc[] = { 21, 22, 23, 24, 25, 26, 27, 28, 29,
 			30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40 };
-	public static String docNumbers[] = { "все документы", "документ 1",
-			"документ 2", "документ 3", "документ 4", "документ 5",
-			"документ 6", "документ 7", "документ 8", "документ 9",
-			"документ 10", "документ 11", "документ 12", "документ 13",
-			"документ 14", "документ 15", "документ 16", "документ 17",
-			"документ 18", "документ 19", "документ 20" };
+	public static String docNumbers[] = { "РІСЃРµ РґРѕРєСѓРјРµРЅС‚С‹", "РґРѕРєСѓРјРµРЅС‚ 1",
+			"РґРѕРєСѓРјРµРЅС‚ 2", "РґРѕРєСѓРјРµРЅС‚ 3", "РґРѕРєСѓРјРµРЅС‚ 4", "РґРѕРєСѓРјРµРЅС‚ 5",
+			"РґРѕРєСѓРјРµРЅС‚ 6", "РґРѕРєСѓРјРµРЅС‚ 7", "РґРѕРєСѓРјРµРЅС‚ 8", "РґРѕРєСѓРјРµРЅС‚ 9",
+			"РґРѕРєСѓРјРµРЅС‚ 10", "РґРѕРєСѓРјРµРЅС‚ 11", "РґРѕРєСѓРјРµРЅС‚ 12", "РґРѕРєСѓРјРµРЅС‚ 13",
+			"РґРѕРєСѓРјРµРЅС‚ 14", "РґРѕРєСѓРјРµРЅС‚ 15", "РґРѕРєСѓРјРµРЅС‚ 16", "РґРѕРєСѓРјРµРЅС‚ 17",
+			"РґРѕРєСѓРјРµРЅС‚ 18", "РґРѕРєСѓРјРµРЅС‚ 19", "РґРѕРєСѓРјРµРЅС‚ 20" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -90,12 +90,12 @@ public class ClientNewOrderActivity extends ListActivity {
 		s2 = (Spinner) findViewById(R.id.SubgroupSpinner);
 		s3 = (Spinner) findViewById(R.id.Subgroup2Spinner);
 
-		// наполним спиннеры фильтров групп и подгрупп
+		// РЅР°РїРѕР»РЅРёРј СЃРїРёРЅРЅРµСЂС‹ С„РёР»СЊС‚СЂРѕРІ РіСЂСѓРїРї Рё РїРѕРґРіСЂСѓРїРї
 		c = dbi.GetGroups(ClientActivity.fromOrgID);
 		startManagingCursor(c);
 		s1.setAdapter(new SimpleCursorAdapter(this, R.layout.group_spinner, c,
 				new String[] { "Name" }, new int[] { R.id.GroupSpinnerName }));
-		s1.setPrompt("Группа");
+		s1.setPrompt("Р“СЂСѓРїРїР°");
 		s1.setOnItemSelectedListener(GroupSelectedListener);
 
 		c2 = dbi.GetSubgroups();
@@ -104,7 +104,7 @@ public class ClientNewOrderActivity extends ListActivity {
 				R.layout.subgroup_spinner, c2, new String[] { "Name" },
 				new int[] { R.id.SubgroupSpinnerName });
 		s2.setAdapter(SubGroupsAdapter);
-		s2.setPrompt("Подгруппа");
+		s2.setPrompt("РџРѕРґРіСЂСѓРїРїР°");
 		s2.setOnItemSelectedListener(SubgroupSelectedListener);
 
 		c3 = dbi.GetSubgroups2();
@@ -113,7 +113,7 @@ public class ClientNewOrderActivity extends ListActivity {
 				R.layout.subgroup_spinner, c3, new String[] { "Name" },
 				new int[] { R.id.SubgroupSpinnerName });
 		s3.setAdapter(SubGroups2Adapter);
-		s3.setPrompt("Вид товара");
+		s3.setPrompt("Р’РёРґ С‚РѕРІР°СЂР°");
 		s3.setOnItemSelectedListener(SubgroupSelectedListener);
 
 		registerForContextMenu(getListView());
@@ -156,7 +156,7 @@ public class ClientNewOrderActivity extends ListActivity {
 			cantDivide = dbi
 					.GetInt((Cursor) getListView().getItemAtPosition(pos),
 							"cantDivide");
-			quantum = cantDivide == 0 ? 1 : PiB;// минимальное приращение
+			quantum = cantDivide == 0 ? 1 : PiB;// РјРёРЅРёРјР°Р»СЊРЅРѕРµ РїСЂРёСЂР°С‰РµРЅРёРµ
 			Weight = dbi.GetFloat(
 					(Cursor) getListView().getItemAtPosition(pos), "Weight");
 			ArticleWeight = ClientActivity.fromOrgID == dbAdapter.STOrgID ? dbi
@@ -166,8 +166,8 @@ public class ClientNewOrderActivity extends ListActivity {
 					.getItemAtPosition(pos), "Name"));
 
 			if (ArticleWeight > 0) {
-				// если задан вес изделия, пишем единичку в изделия, если нет -
-				// квант в штуки
+				// РµСЃР»Рё Р·Р°РґР°РЅ РІРµСЃ РёР·РґРµР»РёСЏ, РїРёС€РµРј РµРґРёРЅРёС‡РєСѓ РІ РёР·РґРµР»РёСЏ, РµСЃР»Рё РЅРµС‚ -
+				// РєРІР°РЅС‚ РІ С€С‚СѓРєРё
 				dialogArticles.setText("1");
 				dialogArticles.setEnabled(true);
 			} else {
@@ -182,12 +182,12 @@ public class ClientNewOrderActivity extends ListActivity {
 		}
 	}
 
-	// заполняет поля единиц и изделий соответствующими друг другу значениями
-	// et - EditText, значение которого нужно выставить
-	// weight1, weight2 - веса единицы и изделия или наоборот в зависимости
-	// какое поле нужно выставить
-	// сравнения перед присваиванием нужны для предотвращения бесконечного цикла
-	// событий изменения текста
+	// Р·Р°РїРѕР»РЅСЏРµС‚ РїРѕР»СЏ РµРґРёРЅРёС† Рё РёР·РґРµР»РёР№ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РёРјРё РґСЂСѓРі РґСЂСѓРіСѓ Р·РЅР°С‡РµРЅРёСЏРјРё
+	// et - EditText, Р·РЅР°С‡РµРЅРёРµ РєРѕС‚РѕСЂРѕРіРѕ РЅСѓР¶РЅРѕ РІС‹СЃС‚Р°РІРёС‚СЊ
+	// weight1, weight2 - РІРµСЃР° РµРґРёРЅРёС†С‹ Рё РёР·РґРµР»РёСЏ РёР»Рё РЅР°РѕР±РѕСЂРѕС‚ РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё
+	// РєР°РєРѕРµ РїРѕР»Рµ РЅСѓР¶РЅРѕ РІС‹СЃС‚Р°РІРёС‚СЊ
+	// СЃСЂР°РІРЅРµРЅРёСЏ РїРµСЂРµРґ РїСЂРёСЃРІР°РёРІР°РЅРёРµРј РЅСѓР¶РЅС‹ РґР»СЏ РїСЂРµРґРѕС‚РІСЂР°С‰РµРЅРёСЏ Р±РµСЃРєРѕРЅРµС‡РЅРѕРіРѕ С†РёРєР»Р°
+	// СЃРѕР±С‹С‚РёР№ РёР·РјРµРЅРµРЅРёСЏ С‚РµРєСЃС‚Р°
 	public static void CorrespondArticles(CharSequence s, EditText et,
 			float weight1, float weight2) {
 		try {
@@ -241,7 +241,7 @@ public class ClientNewOrderActivity extends ListActivity {
 		}
 	};
 
-	// наполним список товаров
+	// РЅР°РїРѕР»РЅРёРј СЃРїРёСЃРѕРє С‚РѕРІР°СЂРѕРІ
 	void GoodsRefresh(int isReturn) {
 		String s;
 		if (ClientActivity.fromOrgID == dbAdapter.MadyaroffOrgID)
@@ -266,13 +266,13 @@ public class ClientNewOrderActivity extends ListActivity {
 	 */
 	@Override
 	protected Dialog onCreateDialog(int id) {
-		// создадим диалог
+		// СЃРѕР·РґР°РґРёРј РґРёР°Р»РѕРі
 		Dialog dialog;
 		switch (id) {
 		case ORDER_DIALOG:
 			dialog = new Dialog(this);
 			dialog.setContentView(R.layout.order_dialog);
-			dialog.setTitle("Количество");
+			dialog.setTitle("РљРѕР»РёС‡РµСЃС‚РІРѕ");
 			dialogGoodsName = (TextView) dialog.findViewById(R.id.GoodsName);
 			dialogUnits = (EditText) dialog.findViewById(R.id.units);
 			dialogArticles = (EditText) dialog.findViewById(R.id.articles);
@@ -409,7 +409,7 @@ public class ClientNewOrderActivity extends ListActivity {
 					dismissDialog(ORDER_DIALOG);
 				} else
 					ShowToast
-							.show(ctx, "Количество должно быть положительным!");
+							.show(ctx, "РљРѕР»РёС‡РµСЃС‚РІРѕ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ РїРѕР»РѕР¶РёС‚РµР»СЊРЅС‹Рј!");
 			} catch (Exception e) {
 				ShowToast.show(ctx, e.toString());
 			}
@@ -427,20 +427,20 @@ public class ClientNewOrderActivity extends ListActivity {
 			ContextMenuInfo menuInfo) {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.goods_contextmenu, menu);
-		// начиная со второго дока по последний плюс 1
+		// РЅР°С‡РёРЅР°СЏ СЃРѕ РІС‚РѕСЂРѕРіРѕ РґРѕРєР° РїРѕ РїРѕСЃР»РµРґРЅРёР№ РїР»СЋСЃ 1
 		for (int i = 1; i < dbi.GetDocsCount(ClientActivity.fromOrgID,
 				ClientActivity.ClientID, 0) + 1; i++) {
 			menu.getItem(0)
 					.getSubMenu()
 					.add(Menu.NONE, addOrderToDoc[i], i,
-							"в документ " + (i + 1));
+							"РІ РґРѕРєСѓРјРµРЅС‚ " + (i + 1));
 		}
 		for (int i = 1; i < dbi.GetDocsCount(ClientActivity.fromOrgID,
 				ClientActivity.ClientID, 1) + 1; i++) {
 			menu.getItem(1)
 					.getSubMenu()
 					.add(Menu.NONE, addReturnToDoc[i], i,
-							"в документ " + (i + 1));
+							"РІ РґРѕРєСѓРјРµРЅС‚ " + (i + 1));
 		}
 
 		super.onCreateContextMenu(menu, v, menuInfo);
@@ -456,7 +456,7 @@ public class ClientNewOrderActivity extends ListActivity {
 		AdapterContextMenuInfo info = (AdapterContextMenuInfo) item
 				.getMenuInfo();
 		if (info != null) {
-			// запомним позицию списка
+			// Р·Р°РїРѕРјРЅРёРј РїРѕР·РёС†РёСЋ СЃРїРёСЃРєР°
 			pos = info.position;
 			this.id = info.id;
 		}
@@ -492,22 +492,22 @@ public class ClientNewOrderActivity extends ListActivity {
 	}
 
 	void doAction(long id, int position, int isReturn) {
-		// если возврат или выбран заказ
+		// РµСЃР»Рё РІРѕР·РІСЂР°С‚ РёР»Рё РІС‹Р±СЂР°РЅ Р·Р°РєР°Р·
 		if (!(isReturn == 0 && orderTypeRadiogroup.getCheckedRadioButtonId() == R.id.radioReturn)) {
 
 			isCurrentActionReturn = isReturn;
-			// запомним позицию списка для диалога
+			// Р·Р°РїРѕРјРЅРёРј РїРѕР·РёС†РёСЋ СЃРїРёСЃРєР° РґР»СЏ РґРёР°Р»РѕРіР°
 			pos = position;
 			this.id = id;
 			if ((ClientActivity.fromOrgID == dbAdapter.STOrgID)
 					&& (isReturn == 0)) {
-				ShowToast.show(ctx, "Заказы запрещены!");
+				ShowToast.show(ctx, "Р—Р°РєР°Р·С‹ Р·Р°РїСЂРµС‰РµРЅС‹!");
 				return;
 			}
 
 			showDialog(ORDER_DIALOG);
 		} else {
-			ShowToast.show(ctx, "Для заказа переключите список внизу!");
+			ShowToast.show(ctx, "Р”Р»СЏ Р·Р°РєР°Р·Р° РїРµСЂРµРєР»СЋС‡РёС‚Рµ СЃРїРёСЃРѕРє РІРЅРёР·Сѓ!");
 		}
 	}
 }

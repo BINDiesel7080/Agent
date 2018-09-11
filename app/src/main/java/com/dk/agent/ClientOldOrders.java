@@ -40,7 +40,7 @@ public class ClientOldOrders extends Activity {
 				ClientActivity.fromOrgID, 1);
 		startManagingCursor(c1);
 		startManagingCursor(c2);
-		orderDateLabel.setText("Последняя заявка от "
+		orderDateLabel.setText("РџРѕСЃР»РµРґРЅСЏСЏ Р·Р°СЏРІРєР° РѕС‚ "
 				+ dbi.GetDocDate(ClientActivity.ClientID,
 						ClientActivity.fromOrgID) + ":");
 		ll1 = (ListView) findViewById(R.id.ll3);

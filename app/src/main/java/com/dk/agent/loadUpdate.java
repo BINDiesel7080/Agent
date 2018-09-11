@@ -50,8 +50,8 @@ public class loadUpdate extends Activity {
 		ContentResolver resolver = getContentResolver();
 		try {
 			is = resolver.openInputStream(intent.getData());
-			File f2 = new File(FullDbPathWithName);// сюда скачаем присланный
-													// апдейт
+			File f2 = new File(FullDbPathWithName);// СЃСЋРґР° СЃРєР°С‡Р°РµРј РїСЂРёСЃР»Р°РЅРЅС‹Р№
+													// Р°РїРґРµР№С‚
 			FileOutputStream fout = new FileOutputStream(f2);
 			byte[] b = new byte[512];
 			int n = 0;
@@ -79,7 +79,7 @@ public class loadUpdate extends Activity {
 					Intent i = new Intent(ctx, MainActivity.class);
 					startActivity(i);
 				} catch (Exception e) {
-					//ShowToast.show(ctx, "ошибка!");
+					//ShowToast.show(ctx, "РѕС€РёР±РєР°!");
 					e.printStackTrace();
 				}
 			}

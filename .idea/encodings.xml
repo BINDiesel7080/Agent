@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/dk/agent/ClientActivity.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/dk/agent/ClientNewOrderActivity.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/dk/agent/ClientOldOrders.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/dk/agent/ClientOrdersActivity.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/dk/agent/MainActivity.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/dk/agent/TotalDebtsList.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/dk/agent/dbAdapter.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/dk/agent/loadUpdate.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/dk/agent/ClientActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/dk/agent/ClientNewOrderActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/dk/agent/ClientOldOrders.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/dk/agent/ClientOrdersActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/dk/agent/MainActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/dk/agent/TotalDebtsList.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/dk/agent/dbAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/dk/agent/loadUpdate.java" charset="UTF-8" />
   </component>
 </project>

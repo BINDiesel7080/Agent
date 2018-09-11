@@ -31,7 +31,7 @@ public class ClientActivity extends TabActivity {
 		this.setTitle(fromOrgName);
 		dbi = new dbAdapter(this);
 		((TextView) findViewById(R.id.ClientName)).setText(ClientName + "   "
-				+ dbi.GetDocsCount(fromOrgID, ClientID) + "док");
+				+ dbi.GetDocsCount(fromOrgID, ClientID) + "РґРѕРє");
 		// ((TextView) findViewById(R.id.fromOrgName)).setText(fromOrgName);
 
 		TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost); // The
@@ -44,10 +44,10 @@ public class ClientActivity extends TabActivity {
 		tabHost.getTabWidget().setDividerDrawable(R.drawable.divider);
 		// Create an Intent to launch an Activity for the tab (to be reused)
 		intent = new Intent().setClass(this, ClientNewOrderActivity.class);
-		View v = createTabView(tabHost.getContext(), "новый заказ");
+		View v = createTabView(tabHost.getContext(), "РЅРѕРІС‹Р№ Р·Р°РєР°Р·");
 		// Initialize a TabSpec for each tab and add it to the TabHost
 		spec = tabHost.newTabSpec("new_order");/*
-												 * .setIndicator("Новый заказ")
+												 * .setIndicator("РќРѕРІС‹Р№ Р·Р°РєР°Р·")
 												 * .setContent(intent);
 												 */
 		// View v = getLayoutInflater().inflate(R.layout.tab_new_order, null);
@@ -58,7 +58,7 @@ public class ClientActivity extends TabActivity {
 		// Do the same for the other tabs
 		intent = new Intent().setClass(this, ClientOrdersActivity.class);
 		spec = tabHost.newTabSpec("orders");
-		v = createTabView(tabHost.getContext(), "уже заказано");
+		v = createTabView(tabHost.getContext(), "СѓР¶Рµ Р·Р°РєР°Р·Р°РЅРѕ");
 		spec.setIndicator(v);
 		spec.setContent(intent);
 		tabHost.addTab(spec);
@@ -66,7 +66,7 @@ public class ClientActivity extends TabActivity {
 		// Do the same for the other tabs
 		intent = new Intent().setClass(this, ClientOldOrders.class);
 		spec = tabHost.newTabSpec("old_orders");
-		v = createTabView(tabHost.getContext(), "а раньше?");
+		v = createTabView(tabHost.getContext(), "Р° СЂР°РЅСЊС€Рµ?");
 		spec.setIndicator(v);
 		spec.setContent(intent);
 		tabHost.addTab(spec);
@@ -74,7 +74,7 @@ public class ClientActivity extends TabActivity {
 		// Do the same for the other tabs
 		intent = new Intent().setClass(this, DebtsList.class);
 		spec = tabHost.newTabSpec("debts");
-		v = createTabView(tabHost.getContext(), "ДТ");
+		v = createTabView(tabHost.getContext(), "Р”Рў");
 		spec.setIndicator(v);
 		spec.setContent(intent);
 		tabHost.addTab(spec);

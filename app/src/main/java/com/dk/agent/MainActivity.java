@@ -90,9 +90,9 @@ public class MainActivity extends ListActivity {
 	}
 
 	void getTotals() {
-		totalClients.setText(String.valueOf(dbi.getClientCount()) + " клиент");
-		totalWeight.setText(String.valueOf(dbi.getWeightTotal()) + " кг");
-		totalTotal.setText(String.valueOf(dbi.getTotalTotal()) + " р");
+		totalClients.setText(String.valueOf(dbi.getClientCount()) + " РєР»РёРµРЅС‚");
+		totalWeight.setText(String.valueOf(dbi.getWeightTotal()) + " РєРі");
+		totalTotal.setText(String.valueOf(dbi.getTotalTotal()) + " СЂ");
 	}
 
 	@Override
@@ -140,14 +140,14 @@ public class MainActivity extends ListActivity {
 			break;
 		case R.id.deleteAllMenuitem:
 			dbi.open();
-			showDialog(ORDERS_DELETE_DIALOG);// диалог подтверждения удаления
-												// заказов
+			showDialog(ORDERS_DELETE_DIALOG);// РґРёР°Р»РѕРі РїРѕРґС‚РІРµСЂР¶РґРµРЅРёСЏ СѓРґР°Р»РµРЅРёСЏ
+												// Р·Р°РєР°Р·РѕРІ
 			dbi.close();
 			break;
 		case R.id.prepareOrders:
 			if (dbi.makeDBToSend(fullDBtoSendName))
 				ShowToast.show(ctx,
-						"Подготовка заявок к приему через USB закончена. Файл БД заявок - "
+						"РџРѕРґРіРѕС‚РѕРІРєР° Р·Р°СЏРІРѕРє Рє РїСЂРёРµРјСѓ С‡РµСЂРµР· USB Р·Р°РєРѕРЅС‡РµРЅР°. Р¤Р°Р№Р» Р‘Р” Р·Р°СЏРІРѕРє - "
 								+ dbAdapter.dbToSendName);
 			break;
 		case R.id.sendOrders:
@@ -166,14 +166,14 @@ public class MainActivity extends ListActivity {
 								new String[] { ctx
 										.getString(fromOrgID == dbAdapter.RadugaOrgID ? R.string.officeEmailRaduga
 												: R.string.officeEmail) });
-				emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Заявка");
+				emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Р—Р°СЏРІРєР°");
 				emailIntent.putExtra(Intent.EXTRA_STREAM,
 						Uri.parse("file:" + fullDBtoSendName));
 				emailIntent.putExtra(Intent.EXTRA_TEXT,
-						Html.fromHtml("<b>заявка</b>"));
+						Html.fromHtml("<b>Р·Р°СЏРІРєР°</b>"));
 				emailIntent.setType("application/octet-stream");
 				ctx.startActivity(Intent.createChooser(emailIntent,
-						"Отправить заявки в офис"));
+						"РћС‚РїСЂР°РІРёС‚СЊ Р·Р°СЏРІРєРё РІ РѕС„РёСЃ"));
 			}
 			break;
 		case R.id.stat:
@@ -218,10 +218,10 @@ public class MainActivity extends ListActivity {
 		// progressDialog = new ProgressDialog(this);
 		// progressDialog.closeOptionsMenu();
 		// return progressDialog;
-		case ORDERS_DELETE_DIALOG:// диалог подтверждения удаления заказов
+		case ORDERS_DELETE_DIALOG:// РґРёР°Р»РѕРі РїРѕРґС‚РІРµСЂР¶РґРµРЅРёСЏ СѓРґР°Р»РµРЅРёСЏ Р·Р°РєР°Р·РѕРІ
 			builder = new AlertDialog.Builder(this);
-			builder.setMessage("Удалить все заказы и возвраты?")
-					.setPositiveButton("Да",
+			builder.setMessage("РЈРґР°Р»РёС‚СЊ РІСЃРµ Р·Р°РєР°Р·С‹ Рё РІРѕР·РІСЂР°С‚С‹?")
+					.setPositiveButton("Р”Р°",
 							new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog,
 										int id) {
@@ -245,7 +245,7 @@ public class MainActivity extends ListActivity {
 								dbi.getOrgs(dbAdapter.MadyaroffOrgID), "Name"));
 			} catch (Exception e) {
 				((RadioButton) dialog.findViewById(R.id.fromMadyaroff))
-						.setText("не используется");
+						.setText("РЅРµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ");
 			} finally {
 			}
 
@@ -254,7 +254,7 @@ public class MainActivity extends ListActivity {
 						.GetString(dbi.getOrgs(dbAdapter.STOrgID), "Name"));
 			} catch (Exception e) {
 				((RadioButton) dialog.findViewById(R.id.fromST))
-						.setText("не используется");
+						.setText("РЅРµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ");
 			} finally {
 			}
 
@@ -263,7 +263,7 @@ public class MainActivity extends ListActivity {
 						.GetString(dbi.getOrgs(dbAdapter.RadugaOrgID), "Name"));
 			} catch (Exception e) {
 				((RadioButton) dialog.findViewById(R.id.fromRain))
-						.setText("не используется");
+						.setText("РЅРµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ");
 			} finally {
 
 			}
@@ -273,14 +273,14 @@ public class MainActivity extends ListActivity {
 						.GetString(dbi.getOrgs(dbAdapter.IrbisOrgID), "Name"));
 			} catch (Exception e) {
 				((RadioButton) dialog.findViewById(R.id.fromIrbis))
-						.setText("не используется");
+						.setText("РЅРµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ");
 			} finally {
 
 			}
 			fromOrgChooser.check(R.id.fromMadyaroff);
 			fromOrgSelected = (Button) dialog
 					.findViewById(R.id.from_org_selected);
-			dialog.setTitle("Торговать от:");
+			dialog.setTitle("РўРѕСЂРіРѕРІР°С‚СЊ РѕС‚:");
 			fromOrgSelected.setOnClickListener(new OnClickListener() {
 				public void onClick(View v) {
 					try {
@@ -299,7 +299,7 @@ public class MainActivity extends ListActivity {
 						fromOrgID = dbAdapter.MadyaroffOrgID;
 						ShowToast
 								.show(ctx,
-										"Выбранная организация не существует. Вместо нее выбрана первая в списке!");
+										"Р’С‹Р±СЂР°РЅРЅР°СЏ РѕСЂРіР°РЅРёР·Р°С†РёСЏ РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚. Р’РјРµСЃС‚Рѕ РЅРµРµ РІС‹Р±СЂР°РЅР° РїРµСЂРІР°СЏ РІ СЃРїРёСЃРєРµ!");
 					} finally {
 
 					}
@@ -318,7 +318,7 @@ public class MainActivity extends ListActivity {
 					.findViewById(R.id.orders_statistics_okButton);
 			ordersStatisticsListview = (ListView) dialog
 					.findViewById(R.id.orders_statistics_listview);
-			dialog.setTitle("Статистика заказа");
+			dialog.setTitle("РЎС‚Р°С‚РёСЃС‚РёРєР° Р·Р°РєР°Р·Р°");
 			ordersStatisticsOkButton.setOnClickListener(new OnClickListener() {
 				public void onClick(View v) {
 					dismissDialog(ORDERS_STATISTICS_DIALOG);

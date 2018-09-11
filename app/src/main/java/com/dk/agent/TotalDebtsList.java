@@ -29,10 +29,10 @@ public class TotalDebtsList extends ListActivity {
 						R.id.total_debt_client, R.id.total_debt_lated,
 						R.id.total_debt }));
 		totals = (TextView) findViewById(R.id.total_debt_totals);
-		totals.setText("Просрочено "
+		totals.setText("РџСЂРѕСЃСЂРѕС‡РµРЅРѕ "
 				+ NumberFormat.getCurrencyInstance().format(
 						dbi.GetDebtsTotals(1, MainActivity.fromOrgID))
-				+ ", общий долг "
+				+ ", РѕР±С‰РёР№ РґРѕР»Рі "
 				+ NumberFormat.getCurrencyInstance().format(
 						dbi.GetDebtsTotals(0, MainActivity.fromOrgID)));
 	}

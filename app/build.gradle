@@ -8,12 +8,15 @@ android {
         applicationId "com.dk.agent"
         minSdkVersion 8
         targetSdkVersion 14
+        project.ext.set("archivesBaseName", "Agent-" + defaultConfig.versionName);
+        buildConfigField "String", "YOUR_TOKEN", '"ABRAKADABRA"'
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
-        }
+            }
     }
 }
